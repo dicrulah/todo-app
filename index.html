@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Todo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- Top bar: the title and the dark mode button -->
+    <header>
+      <h1>My Todo List</h1>
+      <button id="themeBtn" type="button" aria-label="Switch between light and dark mode">Dark</button>
+    </header>
+
+    <!-- Form for adding a new task -->
+    <form id="taskForm">
+      <input id="taskInput" type="text" placeholder="What do you need to do?" autocomplete="off">
+      <div class="row">
+        <input id="dueInput" type="date" aria-label="Due date">
+        <select id="priorityInput" aria-label="Priority">
+          <option value="low">Low priority</option>
+          <option value="medium" selected>Medium priority</option>
+          <option value="high">High priority</option>
+        </select>
+        <button type="submit" class="primary">Add task</button>
+      </div>
+      <p id="error" class="error" hidden>Type a task before you press Add.</p>
+    </form>
+
+    <!-- Buttons to show All, Active or Done tasks -->
+    <div class="filters">
+      <button type="button" class="filter active" data-filter="all">All</button>
+      <button type="button" class="filter" data-filter="active">Active</button>
+      <button type="button" class="filter" data-filter="done">Done</button>
+    </div>
+
+    <!-- The list of tasks (script.js fills this in) -->
+    <ul id="taskList"></ul>
+
+    <!-- Bottom bar: task counter and clear button -->
+    <footer>
+      <span id="counter"></span>
+      <button id="clearBtn" type="button">Clear completed</button>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
